@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- Map Fragment -->
+    <fragment
+        android:id="@+id/map_fragment"
+        android:name="com.google.android.gms.maps.SupportMapFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/location_card" /> <!-- Ensure map fragment is behind other views -->
+
+    <!-- Back button -->
+    <Button
+        android:id="@+id/back_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Back"
+        android:layout_margin="16dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true" />
+
+    <!-- Notification button -->
+    <Button
+        android:id="@+id/notification_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Notification"
+        android:layout_margin="16dp"
+        android:layout_toEndOf="@id/back_button"
+        android:layout_alignTop="@id/back_button" />
+
+    <!-- Search bar -->
+    <SearchView
+        android:id="@+id/search_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:layout_below="@id/back_button"
+        android:layout_alignStart="@id/back_button"
+        android:layout_alignEnd="@id/notification_button" />
+
+    <!-- Location card -->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/location_card"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="16dp">
+
+        <TextView
+            android:id="@+id/location_text_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Current Location"
+            android:textSize="16sp"
+            android:padding="8dp" />
+    </androidx.cardview.widget.CardView>
+
+    <!-- Set Location button -->
+    <Button
+        android:id="@+id/set_location_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Set Location"
+        android:layout_margin="16dp"
+        android:layout_above="@id/location_card"
+        android:layout_centerHorizontal="true" />
+
+    <!-- Add other buttons, text views, etc. here if needed -->
+
+</RelativeLayout>
