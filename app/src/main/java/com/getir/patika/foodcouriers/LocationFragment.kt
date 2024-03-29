@@ -57,9 +57,9 @@ class LocationFragment : Fragment(), OnMapReadyCallback {
             childFragmentManager.findFragmentById(R.id.map_fragment) as SupportMapFragment
         mapFragment.getMapAsync(this)
 
-        searchView = view.findViewById(R.id.search_view)
-        locationCard = view.findViewById(R.id.location_card)
-        locationTextView = view.findViewById(R.id.location_text_view)
+        searchView = view.findViewById(R.id.search_label)
+        locationCard = view.findViewById(R.id.location_details_card)
+        locationTextView = view.findViewById(R.id.full_address_text)
         setLocationButton = view.findViewById(R.id.set_location_button)
 
         searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {

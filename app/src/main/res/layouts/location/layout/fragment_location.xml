@@ -1,73 +1,164 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <!-- Map Fragment -->
     <fragment
         android:id="@+id/map_fragment"
         android:name="com.google.android.gms.maps.SupportMapFragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_above="@id/location_card" /> <!-- Ensure map fragment is behind other views -->
+        />
 
-    <!-- Back button -->
-    <Button
+    <com.google.android.material.card.MaterialCardView
         android:id="@+id/back_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Back"
-        android:layout_margin="16dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true" />
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        app:cardBackgroundColor="#FFE5E4"
+        android:clickable="true"
+        android:focusable="true"
+        android:background="@drawable/shape_bg_ripple"
+        app:cardCornerRadius="7dp"
+        app:cardElevation="0dp"
+        app:strokeWidth="0dp">
 
-    <!-- Notification button -->
-    <Button
+        <ImageView
+            android:layout_width="10dp"
+            android:layout_height="16dp"
+            android:layout_gravity="center"
+            android:src="@drawable/ic_back_profile" />
+    </com.google.android.material.card.MaterialCardView>
+
+    <com.google.android.material.card.MaterialCardView
         android:id="@+id/notification_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Notification"
-        android:layout_margin="16dp"
-        android:layout_toEndOf="@id/back_button"
-        android:layout_alignTop="@id/back_button" />
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginTop="16dp"
+        app:cardBackgroundColor="#FFE5E4"
+        app:cardCornerRadius="7dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:background="@drawable/shape_bg_ripple"
+        app:cardElevation="0dp"
+        app:strokeWidth="0dp"
+        android:layout_alignParentEnd="true">
 
-    <!-- Search bar -->
-    <SearchView
-        android:id="@+id/search_view"
+        <ImageView
+            android:layout_width="19dp"
+            android:layout_height="23dp"
+            android:layout_gravity="center"
+            android:src="@drawable/ic_notification_profile" />
+    </com.google.android.material.card.MaterialCardView>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/search_label_card"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
         android:layout_below="@id/back_button"
-        android:layout_alignStart="@id/back_button"
-        android:layout_alignEnd="@id/notification_button" />
-
-    <!-- Location card -->
-    <androidx.cardview.widget.CardView
-        android:id="@+id/location_card"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_margin="16dp">
+        app:cardCornerRadius="8dp"
+        android:background="@drawable/shape_bg_ripple"
+        app:cardBackgroundColor="#FFE5E4"
+        app:cardElevation="0dp"
+        app:strokeWidth="0dp">
 
         <TextView
-            android:id="@+id/location_text_view"
+            android:id="@+id/search_label"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Current Location"
-            android:textSize="16sp"
-            android:padding="8dp" />
-    </androidx.cardview.widget.CardView>
+            android:text="Where is your location"
+            android:textSize="12sp"
+            android:textColor="#000000"
+            android:fontFamily="sans-serif"
+            android:drawablePadding="8dp"
+            android:fontWeight="900"
+            android:padding="16dp"
+            app:drawableStartCompat="@drawable/ic_search" />
+    </com.google.android.material.card.MaterialCardView>
 
-    <!-- Set Location button -->
-    <Button
-        android:id="@+id/set_location_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Set Location"
-        android:layout_margin="16dp"
-        android:layout_above="@id/location_card"
-        android:layout_centerHorizontal="true" />
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/location_details_card"
+        android:layout_width="342dp"
+        android:layout_height="181dp"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="16dp"
+        app:cardCornerRadius="8dp"
+        app:strokeWidth="0dp"
+        android:background="#FFFFFF">
 
-    <!-- Add other buttons, text views, etc. here if needed -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/your_location_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Your Location"
+                android:textSize="14sp"
+                android:textColor="#3B3B3B"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:fontFamily="sans-serif"
+                android:fontWeight="500"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="16dp">
+
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"
+                    app:cardBackgroundColor="#FFE5E4"
+                    app:cardCornerRadius="18dp"
+                    android:layout_gravity="center_vertical">
+
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/ic_location"/>
+                </com.google.android.material.card.MaterialCardView>
+
+                <TextView
+                    android:id="@+id/full_address_text"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Full Address"
+                    android:textSize="12sp"
+                    android:textColor="#3B3B3B"
+                    android:layout_marginStart="8dp"
+                    android:fontFamily="sans-serif"
+                    android:fontWeight="500"/>
+            </LinearLayout>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/set_location_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:text="Set Location"
+                android:textColor="#FFFFFF"
+                android:textSize="14sp"
+                android:fontFamily="sans-serif"
+                android:fontWeight="500"
+                android:background="@drawable/gradient_button"
+                android:padding="12dp"/>
+
+        </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
 
 </RelativeLayout>
