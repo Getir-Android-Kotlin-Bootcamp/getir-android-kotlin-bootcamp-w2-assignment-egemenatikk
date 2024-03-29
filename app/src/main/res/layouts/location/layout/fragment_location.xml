@@ -68,7 +68,7 @@
         app:cardElevation="0dp"
         app:strokeWidth="0dp">
 
-        <TextView
+        <SearchView
             android:id="@+id/search_label"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

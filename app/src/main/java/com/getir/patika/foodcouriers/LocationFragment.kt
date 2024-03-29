@@ -57,10 +57,12 @@ class LocationFragment : Fragment(), OnMapReadyCallback {
             childFragmentManager.findFragmentById(R.id.map_fragment) as SupportMapFragment
         mapFragment.getMapAsync(this)
 
-        searchView = view.findViewById(R.id.search_label)
+        searchView = view.findViewById<SearchView>(R.id.search_label)
         locationCard = view.findViewById(R.id.location_details_card)
         locationTextView = view.findViewById(R.id.full_address_text)
         setLocationButton = view.findViewById(R.id.set_location_button)
+
+        searchView.queryHint = "Where is your location"
 
         searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
             override fun onQueryTextSubmit(query: String?): Boolean {
